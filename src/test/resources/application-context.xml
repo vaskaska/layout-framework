@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+			http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd
+			http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd"
+       default-lazy-init="true">
+
+    <bean id="PropertyPlaceholderConfigurer"
+          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:common.properties</value>
+                <value>classpath:env/${env}.env.properties</value>
+            </list>
+        </property>
+        <property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE" />
+        <property name="nullValue" value="{null}" />
+    </bean>
+
+    <bean id="testConfig" class="com.statravel.qa.config.Configuration">
+        <property name="url_uk" value="${statravel.url.uk}" />
+        <property name="url_us" value="${statravel.url.us}" />
+        <property name="url_au" value="${statravel.url.au}" />
+        <property name="url_nz" value="${statravel.url.nz}" />
+        <property name="url_sg" value="${statravel.url.sg}" />
+        <property name="url_fr" value="${statravel.url.fr}" />
+        <property name="url_de" value="${statravel.url.de}" />
+        <property name="url_za" value="${statravel.url.za}" />
+        <property name="url_th" value="${statravel.url.th}" />
+        <property name="url_at" value="${statravel.url.at}" />
+        <property name="seleniumHost" value="${seleniumHost}" />
+        <property name="seleniumPort" value="${seleniumPort}" />
+        <property name="remote">
+            <value type="java.lang.Boolean">${remote}</value>
+        </property>
+        <property name="posConfiguration" >
+            <ref bean="posConfig"/>
+        </property>
+
+    </bean>
+
+    <util:map id="posConfig" map-class="java.util.HashMap" key-type="java.lang.String" value-type="java.util.Properties">
+        <entry key="UK" value-ref="uk_config" />
+        <entry key="AU" value-ref="au_config" />
+        <entry key="NZ" value-ref="nz_config" />
+        <entry key="US" value-ref="us_config" />
+        <entry key="SG" value-ref="sg_config" />
+        <entry key="DE" value-ref="de_config" />
+        <entry key="FR" value-ref="fr_config" />
+        <entry key="ZA" value-ref="za_config" />
+        <entry key="TH" value-ref="th_config" />
+        <entry key="AT" value-ref="at_config" />
+    </util:map>
+    <util:properties id="uk_config" location="classpath:/data/posconfig/${env}/uk.config.properties" />
+    <util:properties id="au_config" location="classpath:/data/posconfig/${env}/au.config.properties" />
+    <util:properties id="nz_config" location="classpath:/data/posconfig/${env}/nz.config.properties" />
+    <util:properties id="us_config" location="classpath:/data/posconfig/${env}/us.config.properties" />
+    <util:properties id="sg_config" location="classpath:/data/posconfig/${env}/sg.config.properties" />
+    <util:properties id="de_config" location="classpath:/data/posconfig/${env}/de.config.properties" />
+    <util:properties id="fr_config" location="classpath:/data/posconfig/${env}/fr.config.properties" />
+    <util:properties id="za_config" location="classpath:/data/posconfig/${env}/za.config.properties" />
+    <util:properties id="th_config" location="classpath:/data/posconfig/${env}/th.config.properties" />
+    <util:properties id="at_config" location="classpath:/data/posconfig/${env}/at.config.properties" />
+
+</beans>

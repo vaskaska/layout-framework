@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.statravel.qa</groupId>
+    <artifactId>sm-ui-layout-tests</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <name>sm-ui-layout-tests</name>
+
+    <properties>
+        <jselenium.jar.version>com.epam.ta.jselenium-0.0.20.jar</jselenium.jar.version>
+        <jtestcore.jar.version>com.epam.ta.jtestcore-0.0.9.jar</jtestcore.jar.version>
+        <selenium.api.version>2.44.0</selenium.api.version>
+        <org.springframework.version>3.2.5.RELEASE</org.springframework.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.epam.ta.epmc-tst</groupId>
+            <artifactId>com.epam.ta.jselenium</artifactId>
+            <version>RELEASE</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/${jselenium.jar.version}</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>com.epam.ta.epmc-tst</groupId>
+            <artifactId>com.epam.ta.jtestcore</artifactId>
+            <version>RELEASE</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/${jtestcore.jar.version}</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>com.galenframework</groupId>
+            <artifactId>galen-java-support</artifactId>
+            <version>2.1.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>6.8.7</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-api</artifactId>
+            <version>${selenium.api.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>${selenium.api.version}</version>
+        </dependency>
+
+        <!-- Spring -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>${org.springframework.version}</version>
+            <type>jar</type>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${org.springframework.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>${org.springframework.version}</version>
+        </dependency>
+
+        <!-- Logging -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.5</version>
+        </dependency>
+
+    </dependencies>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.17</version>
+                <configuration>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>${suite}.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+                    <properties>
+                        <property><name>usedefaultlisteners</name><value>false</value></property>
+                        <property>
+                            <name>listener</name>
+                            <value>com.galenframework.testng.GalenTestNgReportsListener</value>
+                        </property>
+                    </properties>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

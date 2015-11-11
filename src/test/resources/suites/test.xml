@@ -1,0 +1,29 @@
+<suite verbose="2" name="SearchWidg POS"
+       parallel="tests" thread-count="1" data-provider-thread-count="1"
+       annotations="JDK">
+
+    <test name="CheapFlightsPageTest desktop">
+        <parameter name="pos" value="AU" />
+        <parameter name="device" value="DESKTOP" />
+        <classes>
+            <class name="com.statravel.qa.tests.CheapFlightsPageTest">
+                <methods>
+                    <include name="cheapFlightTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="CheapFlightsPageTest mobile">
+        <parameter name="pos" value="AU" />
+        <parameter name="device" value="MOBILE" />
+        <classes>
+            <class name="com.statravel.qa.tests.CheapFlightsPageTest">
+                <methods>
+                    <include name="cheapFlightTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>
