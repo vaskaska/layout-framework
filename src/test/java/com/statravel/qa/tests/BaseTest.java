@@ -3,7 +3,7 @@ package com.statravel.qa.tests;
 import com.epam.ta.jselenium.ui.Browser;
 import com.galenframework.testng.GalenTestNgTestBase;
 import com.statravel.qa.config.Configuration;
-import com.statravel.qa.config.GalenSpecs;
+import com.statravel.qa.config.GalenSpecsReferences;
 import com.statravel.qa.domain.POS;
 import com.statravel.qa.domain.Page;
 import com.statravel.qa.domain.TestDevice;
@@ -25,7 +25,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 
 @ContextConfiguration(locations = { "classpath:application-context.xml" })
-public abstract class BaseTest extends GalenTestNgTestBase implements GalenSpecs{
+public abstract class BaseTest extends GalenTestNgTestBase implements GalenSpecsReferences {
 
     protected static Configuration testConfig;
 

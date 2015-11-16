@@ -10,12 +10,15 @@
             width ~304px
             height ~410px
 
-    @on *
-        flights-tab-box:
-            inside search-widget-box ~0px top left
+    = Tabs =
+        @on *
+            flights-tab-box:
+                inside search-widget-box ~0px top left
+                aligned horizontally all hotels-tab-box
+                aligned horizontally all tours-tab-box
 
-        hotels-tab-box:
-            right-of flights-tab-box ~2px
+            hotels-tab-box:
+                right-of flights-tab-box ~2px
 
-        tours-tab-box:
-            right-of hotels-tab-box ~2px
+            tours-tab-box:
+                right-of hotels-tab-box ~2px
