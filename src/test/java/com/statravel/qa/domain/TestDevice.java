@@ -13,7 +13,7 @@ import static java.util.Arrays.asList;
 public enum TestDevice {
 
     DESKTOP("desktop", new Dimension(1024, 800), asList("desktop")),
-    MOBILE("mobile", new Dimension(450, 800), asList("mobile"));
+    MOBILE("mobile", new Dimension(320, 568), asList("mobile"));
 
     private final String name;
     private final Dimension screenSize;

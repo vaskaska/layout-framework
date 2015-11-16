@@ -5,11 +5,6 @@
     tours-tab-landscape         xpath   //div[@class='searchWrapper landscape']//ul[contains(@class, 'searchTabs contain')]//a[@data-tab-content-name='qbtb_tours']
 
 = Search widget landscape =
-    @on desktop
-        search-widget-landscape:
-            width ~960px
-            height ~282px
-
     = Tabs =
         @on *
             flights-tab-landscape:

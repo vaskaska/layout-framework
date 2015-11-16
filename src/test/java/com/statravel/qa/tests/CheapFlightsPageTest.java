@@ -17,7 +17,7 @@ public class CheapFlightsPageTest extends BaseTest {
         CheapFlightsScreen cheapFlightsScreen = browser.openScreen(buildUrl(pos, Page.CHEAP_FLIGHTS), CheapFlightsScreen.class);
         checkLayout(CHEAP_FLIGHTS_BASE_TEST, device);
 
-        cheapFlightsScreen.getSearchWidget().clickDepartureDateInput();
-        checkLayout(SEARCH_WIDGET_BOX_CALENDAR_TEST, device);
+//        cheapFlightsScreen.getSearchWidget().clickDepartureDateInput();
+//        checkLayout(SEARCH_WIDGET_BOX_CALENDAR_TEST, device);
     }
 }

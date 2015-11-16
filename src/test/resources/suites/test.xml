@@ -13,10 +13,10 @@
             </class>
         </classes>
     </test>
-
+<!--
     <test name="CheapFlightsPageTest mobile">
         <parameter name="pos" value="AU" />
-        <parameter name="device" value="MOBILE" />
+        <parameter name="device" value="MOBILE" />DESKTOP
         <classes>
             <class name="com.statravel.qa.tests.CheapFlightsPageTest">
                 <methods>
@@ -25,5 +25,5 @@
             </class>
         </classes>
     </test>
-
+-->
 </suite>

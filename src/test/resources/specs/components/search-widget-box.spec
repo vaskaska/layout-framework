@@ -5,11 +5,6 @@
     tours-tab-box           xpath   //div[@class='searchWrapper portrait']//ul[contains(@class, 'searchTabs contain')]//a[@data-tab-content-name='qbtb_tours']
 
 = Search widget box =
-    @on desktop
-        search-widget-box:
-            width ~304px
-            height ~410px
-
     = Tabs =
         @on *
             flights-tab-box:
