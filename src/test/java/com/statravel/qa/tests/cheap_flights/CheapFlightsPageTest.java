@@ -42,4 +42,28 @@ public class CheapFlightsPageTest extends BaseTest {
         browser.openScreen(buildUrl(POS.NZ, Page.CHEAP_FLIGHTS), CheapFlightsScreen.class);
         checkLayout(CHEAP_FLIGHTS_BASE_TEST, device, POS.NZ);
     }
+
+    @Test
+    @Parameters({"device"})
+    public void cheapFlightTest_SG(TestDevice device) {
+        changeScreenSize(device.getScreenSize());
+        browser.openScreen(buildUrl(POS.SG, Page.CHEAP_FLIGHTS), CheapFlightsScreen.class);
+        checkLayout(CHEAP_FLIGHTS_BASE_TEST, device, POS.SG);
+    }
+
+    @Test
+    @Parameters({"device"})
+    public void cheapFlightTest_UK(TestDevice device) {
+        changeScreenSize(device.getScreenSize());
+        browser.openScreen(buildUrl(POS.UK, Page.CHEAP_FLIGHTS), CheapFlightsScreen.class);
+        checkLayout(CHEAP_FLIGHTS_BASE_TEST, device, POS.UK);
+    }
+
+    @Test
+    @Parameters({"device"})
+    public void cheapFlightTest_US(TestDevice device) {
+        changeScreenSize(device.getScreenSize());
+        browser.openScreen(buildUrl(POS.US, Page.CHEAP_FLIGHTS), CheapFlightsScreen.class);
+        checkLayout(CHEAP_FLIGHTS_BASE_US_TEST, device, POS.US);
+    }
 }

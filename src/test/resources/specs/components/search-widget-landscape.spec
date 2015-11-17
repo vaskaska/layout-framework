@@ -14,6 +14,6 @@
                     aligned horizontally all hotels-tab-landscape
                     aligned horizontally all tours-tab-landscape
                 hotels-tab-landscape:
-                    right-of flights-tab-landscape ~2px
+                    right-of flights-tab-landscape 1 to 8px
                 tours-tab-landscape:
-                    right-of hotels-tab-landscape ~2px
+                    right-of hotels-tab-landscape 1 to 8px

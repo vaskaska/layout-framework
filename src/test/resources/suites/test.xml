@@ -7,7 +7,13 @@
         <classes>
             <class name="com.statravel.qa.tests.cheap_flights.CheapFlightsPageTest">
                 <methods>
-                    <include name="cheapFlightTest_DE" />
+                    <!--<include name="cheapFlightTest_AU" />-->
+                    <!--<include name="cheapFlightTest_DE" />-->
+                    <!--<include name="cheapFlightTest_FR" />-->
+                    <!--<include name="cheapFlightTest_NZ" />-->
+                    <!--<include name="cheapFlightTest_SG" />-->
+                    <!--<include name="cheapFlightTest_UK" />-->
+                    <include name="cheapFlightTest_US" />
                 </methods>
             </class>
         </classes>
