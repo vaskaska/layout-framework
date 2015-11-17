@@ -1,6 +1,7 @@
 package com.statravel.qa.tests;
 
 import com.epam.ta.jselenium.ui.Browser;
+import com.galenframework.specs.reader.page.SectionFilter;
 import com.galenframework.testng.GalenTestNgTestBase;
 import com.statravel.qa.config.Configuration;
 import com.statravel.qa.config.GalenSpecsReferences;
@@ -18,6 +19,10 @@ import java.io.IOException;
 import org.testng.annotations.BeforeSuite;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.springframework.context.ApplicationContext;
@@ -77,9 +82,11 @@ public abstract class BaseTest extends GalenTestNgTestBase implements GalenSpecs
         return getBaseUrl(pos) + "/" + testConfig.getPosConfigurationProperty(pos, page.getPageUrl());
     }
 
-    public void checkLayout(String filePath, TestDevice testDevice){
+    public void checkLayout(String filePath, TestDevice testDevice, POS pos){
         try {
-            checkLayout(filePath, testDevice.getTags());
+            Map<String, Object> vars = new HashMap<>();
+            vars.put("pos", pos);
+            checkLayout(filePath, new SectionFilter(testDevice.getTags(), Collections.<String>emptyList()), new Properties(), vars);
         } catch (IOException e){
             e.printStackTrace();
         }

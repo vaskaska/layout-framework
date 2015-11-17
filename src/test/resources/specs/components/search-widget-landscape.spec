@@ -9,11 +9,11 @@
         @on *
             flights-tab-landscape:
                 inside search-widget-landscape ~0px top left
-                aligned horizontally all hotels-tab-landscape
-                aligned horizontally all tours-tab-landscape
-
-            hotels-tab-landscape:
-                right-of flights-tab-landscape ~2px
-
-            tours-tab-landscape:
-                right-of hotels-tab-landscape ~2px
+            @if ${ "FR" != pos }
+                flights-tab-landscape:
+                    aligned horizontally all hotels-tab-landscape
+                    aligned horizontally all tours-tab-landscape
+                hotels-tab-landscape:
+                    right-of flights-tab-landscape ~2px
+                tours-tab-landscape:
+                    right-of hotels-tab-landscape ~2px
